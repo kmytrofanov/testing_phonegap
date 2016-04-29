@@ -6,5 +6,6 @@ var myApp = angular.module("myModule", [])
     $scope.elements = $http.get('https://api.kumulos.com/v1/data/6205_6210_users')
         .then(function (response) {
             $scope.elements = response.data;
+            $scope.full_message = response;
         });
 });
