@@ -20,6 +20,9 @@
         
     <platform name="android" />
         
-    <plugin name="cordova-plugin-network-information"/>
+    <plugin name="cordova-plugin-whitelist"/>
+    <allow-navigation href="*" />
+    <access origin="*" />
+    <allow-intent href="*" />
 	
 </widget>
