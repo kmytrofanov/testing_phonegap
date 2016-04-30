@@ -21,8 +21,8 @@
     <platform name="android" />
         
     <plugin name="cordova-plugin-whitelist"/>
-    <allow-navigation href="*" />
+    <!-- <allow-navigation href="*" /> -->
     <access origin="*" />
-    <allow-intent href="*" />
+    <!-- <allow-intent href="*" /> -->
 	
 </widget>
