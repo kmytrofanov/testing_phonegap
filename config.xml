@@ -22,7 +22,7 @@
         
     <plugin name="cordova-plugin-whitelist"/>
     <!-- <allow-navigation href="*" /> -->
-    <access origin="*" />
+    <access origin="https://api.kumulos.com/v1/data/*" />
     <!-- <allow-intent href="*" /> -->
 	
 </widget>
