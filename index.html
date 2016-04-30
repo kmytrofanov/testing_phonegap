@@ -22,15 +22,13 @@
           <h3 class="topcoat-list__header"> {{message}}</h3>
           <ul class="topcoat-list__container">
             <li class="topcoat-list__item" ng-repeat="element in elements">
-              {{ element.username }}
-            </li>
-            <li class="topcoat-list__item">
-                {{ full_message }}
+              {{ element.username }} <button class="topcoat-button--cta" ng-click="deleteUser(element.userID)">X</button>
             </li>
           </ul>
         </div>
+        <input type="text" class="topcoat-text-input" placeholder="User name" value="" ng-model="new_name">
+        <button class="topcoat-button--cta" ng-click="addNewUser(new_name)">Add</button>
     </div>
-    
 </body>
 
 </html>
