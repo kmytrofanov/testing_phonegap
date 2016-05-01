@@ -8,26 +8,50 @@
     <script src="js/angular.js"></script>>
     <script src="js/angular-route.js"></script>>
     <script src="js/scripts.js"></script>>
+    <script src="js/upload.js"></script>
 </head>
 
 <body>
     <div class="topcoat-navigation-bar">
         <div class="topcoat-navigation-bar__item center full">
-            <h1 class="topcoat-navigation-bar__title">This is new.</h1>
+            <h1 class="topcoat-navigation-bar__title">This is new</h1>
         </div>
     </div>
     
     <div ng-controller="myController">
         <div class="topcoat-list">
-          <h3 class="topcoat-list__header"> {{message}}</h3>
+          <h3 class="topcoat-list__header"> {{users_header}}</h3>
           <ul class="topcoat-list__container">
             <li class="topcoat-list__item" ng-repeat="element in elements">
-              {{ element.username }} <button class="topcoat-button--cta" ng-click="deleteUser(element.userID)">X</button>
+                {{ element.username }} <button class="topcoat-button--cta" ng-click="deleteUser(element.userID)" >X</button>
             </li>
           </ul>
         </div>
         <input type="text" class="topcoat-text-input" placeholder="User name" value="" ng-model="new_name">
         <button class="topcoat-button--cta" ng-click="addNewUser(new_name)">Add</button>
+        
+        <div class="topcoat-list">
+          <h3 class="topcoat-list__header"> {{image_header}}</h3>
+          <ul class="topcoat-list__container">
+            <li class="topcoat-list__item" ng-repeat="image in images">
+                {{ image.name }} <img ng-src="{{image.file}}" />
+            </li>
+          </ul>
+        </div>
+        {{ success_message}}
+        {{ error_message }}
+     </div>
+ 
+    <div ng-controller="UploadController ">
+        <form>
+            <input type="file" ng-file-select="onFileSelect($files)" >
+        </form>
+        <b>Preview:</b><br />
+        <i ng-hide="imageSrc">No image choosed</i>
+        <img ng-src="{{imageSrc}}" /><br/>
+        <b>Progress:</b>
+        <progress value="{{progress}}"></progress><br>
+        <button class="topcoat-button--cta" ng-click="uploadFile()">Upload</button>
     </div>
 </body>
 
