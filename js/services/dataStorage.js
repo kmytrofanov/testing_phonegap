@@ -24,6 +24,23 @@ app.factory('dataStorage', function($http, $log) {
             });
         },
         
+        deleteProject: function (id){
+            return $http.delete('https://api.kumulos.com/v1/data/6205_6210_projects/' + id);
+        },
+        
+        addNewProject: function (name) {
+            var newProject = { "name":name };
+            return $http.post('https://api.kumulos.com/v1/data/6205_6210_projects', newProject);
+        },
+        
+        deleteImage: function (id){
+            return $http.delete('https://api.kumulos.com/v1/data/6205_6210_images/' + id);
+        },
+        
+        addNewImage: function (newImage) {
+            return $http.post('https://api.kumulos.com/v1/data/6205_6210_images', newImage);
+        },
+        
         getUsers: function () {
             $log.debug("users queried");
             return $http.get('https://api.kumulos.com/v1/data/6205_6210_users');
@@ -32,6 +49,11 @@ app.factory('dataStorage', function($http, $log) {
         getImages : function () {
             $log.debug("images queried");
             return $http.get('https://api.kumulos.com/v1/data/6205_6210_images')
+        },
+
+        getProjects : function () {
+            $log.debug("projects queried");
+            return $http.get('https://api.kumulos.com/v1/data/6205_6210_projects')
         }
     };
 })

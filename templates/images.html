@@ -2,6 +2,18 @@
     <ul class="topcoat-list__container">
         <li class="topcoat-list__item" ng-repeat="image in images">
             <img ng-src="{{image.file}}" width="50" height="50"/> {{ image.name }}
+            <button class="topcoat-button--cta" ng-click="deleteImage(image.imageID)">X</button>
         </li>
     </ul>
+    <div ng-controller="uploadController">
+        <form>
+            <input type="file" ng-file-select="onFileSelect($files)" >
+        </form>
+        <b>Preview:</b><br />
+        <i ng-hide="imageSrc">No image chosen</i>
+        <img ng-src="{{imageSrc}}" /><br/>
+        <b>Progress:</b>
+        <progress value="{{progress}}"></progress><br>
+        <button class="topcoat-button--cta" ng-click="addNewImage(imageSrc)">Upload</button>
+    </div>
 </div>

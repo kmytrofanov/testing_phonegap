@@ -1,7 +1,10 @@
 <div class="topcoat-list">
     <ul class="topcoat-list__container">
         <li class="topcoat-list__item" ng-repeat="project in projects">
-            {{ project.username }} <br> {{ project.description }}
+            {{ project.name }}
+            <button class="topcoat-button--cta" ng-click="deleteProject(project.projectID)">X</button>
         </li>
+        <input type="text" class="topcoat-text-input" placeholder="Enter new project name" value="" ng-model="new_name">
+        <button class="topcoat-button--cta" ng-click="addNewProject(new_name)">Add</button>
     </ul>
 </div>
