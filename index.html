@@ -4,47 +4,32 @@
 
 <head>
     <title>Testing Parts</title>
-    <link href="css/topcoat-mobile-dark.css" rel="stylesheet">
+    <link href="css/topcoat-mobile-light.css" rel="stylesheet">
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/services/dataStorage.js"></script>
     <script src="js/controllers/mainController.js"></script>
+    <script src="js/controllers/homeController.js"></script>
+    <script src="js/controllers/projectsController.js"></script>
+    <script src="js/controllers/imagesController.js"></script>
+<!--
     <script src="js/controllers/uploadController.js"></script>
     <script src="js/upload.js"></script>
+-->
 </head>
 
 <body>
-    <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar" ng-controller="mainController">
         <div class="topcoat-navigation-bar__item center full">
-            <h1 class="topcoat-navigation-bar__title">This is new</h1>
+            <h1 class="topcoat-navigation-bar__title">
+                <span ng-if="canGoBack" ng-click="navigateTo('/home')"><img src="img/back.svg" height="20em" width="20em"></span>
+                {{ title }}
+            </h1>
         </div>
     </div>
-    
-    <div ng-controller="mainController">
-        <div class="topcoat-list">
-          <h3 class="topcoat-list__header"> {{users_header}}</h3>
-          <ul class="topcoat-list__container">
-            <li class="topcoat-list__item" ng-repeat="element in elements">
-                {{ element.username }} <button class="topcoat-button--cta" ng-click="deleteUser(element.userID)" >X</button>
-            </li>
-          </ul>
-        </div>
-        <input type="text" class="topcoat-text-input" placeholder="User name" value="" ng-model="new_name">
-        <button class="topcoat-button--cta" ng-click="addNewUser(new_name)">Add</button>
-        
-        <div class="topcoat-list">
-          <h3 class="topcoat-list__header"> {{image_header}}</h3>
-          <ul class="topcoat-list__container">
-            <li class="topcoat-list__item" ng-repeat="image in images">
-                {{ image.name }} <img ng-src="{{image.file}}" />
-            </li>
-          </ul>
-        </div>
-        {{ success_message}}
-        {{ error_message }}
-     </div>
- 
+    <ng-view></ng-view>
+<!--
     <div ng-controller="uploadController">
         <form>
             <input type="file" ng-file-select="onFileSelect($files)" >
@@ -56,6 +41,7 @@
         <progress value="{{progress}}"></progress><br>
         <button class="topcoat-button--cta" ng-click="uploadFile()">Upload</button>
     </div>
+-->
 </body>
 
 </html>
