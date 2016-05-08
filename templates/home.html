@@ -1,10 +1,14 @@
-<div class="topcoat-list">
-    <ul class="topcoat-list__container">
-        <li class="topcoat-list__item" ng-click="navigateTo('/projects')">
-            Demo Projects
-        </li>
-        <li class="topcoat-list__item" ng-click="navigateTo('/images')">
-            Image Gallery
-        </li>
-    </ul>
+<div ui-content-for="title">
+  <span>Navigation</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="list-group">
+        
+      <a href="#/projects" class="list-group-item" ng-repeat="item in items">
+        {{ item }} <i class="fa fa-chevron-right pull-right"></i>
+      </a>
+    </div>
+  </div>
 </div>

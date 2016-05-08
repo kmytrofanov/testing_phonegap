@@ -1,4 +1,4 @@
-var mainController = function ($scope, $log, $location, dataStorage) {
+app.controller("mainController", function ($scope, dataStorage) {
     $scope.addNewUser = function (name) {
         dataStorage.addNewUser(name);
         dataStorage.getUsers().then(function (response) {$scope.elements = response.data});
@@ -13,6 +13,4 @@ var mainController = function ($scope, $log, $location, dataStorage) {
         $scope.$parent.canGoBack = false;
         $scope.$parent.mainPage = true;
     };
-};
-
-app.controller("mainController", mainController);
+});
