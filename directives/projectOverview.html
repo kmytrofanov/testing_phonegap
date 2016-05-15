@@ -1,0 +1,7 @@
+Project Name: {{ overview.name }} <br>
+Customer: {{ overview.customer.name }} <br>
+Original Contract Price: {{ overview.original_price }}<br>
+Cost Of Approved Changes: {{ overview.approved_changes_price }} <br>
+Approved Contract Price: {{ overview.original_price + overview.approved_changes_price }} <br>
+Cost Of Un-Approved Changes: {{ overview.unapproved_changes_price }}<br>
+Estimated Price (With Other Changes): {{ overview.original_price + overview.approved_changes_price + overview.unapproved_changes_price }}

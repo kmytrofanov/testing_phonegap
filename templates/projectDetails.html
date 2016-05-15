@@ -1,0 +1,62 @@
+<div ui-content-for="title">
+  <span>{{ project.name }}</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class='section'>
+      <ui-state id='activeTab' default='1'></ui-state>
+
+      <ul class="nav nav-tabs">
+        <li ui-class="{'active': activeTab == 1}">
+          <a ui-set="{'activeTab': 1}">Summary</a>
+        </li>
+        <li ui-class="{'active': activeTab == 2}">
+          <a ui-set="{'activeTab': 2}">Changes</a>
+        </li>
+        <li ui-class="{'active': activeTab == 3}">
+          <a ui-set="{'activeTab': 3}">Timeline</a>
+        </li>
+      </ul>
+
+      <div ui-if="activeTab == 1">
+        <gaf-project-overview overview=overview></gaf-project-overivew>
+      </div>
+
+      <div ui-if="activeTab == 2">
+        <div class="panel-group" ui-state='changeAccordion'>
+
+          <div class="panel panel-default" ng-repeat="change in changes">
+            <div class="panel-heading" ui-set="{'changeAccordion': $index}">
+              <gaf-change-summary class="panel-title" change="change"></gaf-change-summary>
+            </div>
+
+            <div ui-if="changeAccordion == {{$index}}">
+              <div class="panel-body">
+                <gaf-change class="list-group-item" change="change", history="history"></gaf-change>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div ui-if="activeTab == 3">
+        <div class="list-group">        
+          <gaf-timeline-entry class="list-group-item" ng-repeat="entry in timeline" entry="entry"></gaf-timeline-entry>
+        </div>
+      </div>
+
+      <div class="btn-group justified nav-tabs">
+        <a ui-set="{'activeTab': 1}" 
+            ui-class="{'active': activeTab == 1}" class="btn btn-default">Summary</a>
+
+        <a ui-set="{'activeTab': 2}" 
+            ui-class="{'active': activeTab == 2}" class="btn btn-default">Changes</a>
+
+        <a ui-set="{'activeTab': 3}" 
+            ui-class="{'active': activeTab == 3}" class="btn btn-default">Timeline</a>
+      </div>  
+    </div>
+      
+  </div>
+</div>

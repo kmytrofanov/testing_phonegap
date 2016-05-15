@@ -7,21 +7,23 @@
 <!--    <link href="css/topcoat-mobile-light.css" rel="stylesheet">-->
     <link href="css/mobile-angular-ui-base.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <script src="js/angular.js"></script>
+    <script src="js/libs/angular.js"></script>
 <!--    <script src="js/angular-animate.js"></script>-->
-    <script src="js/angular-route.js"></script>
-    <script src="js/mobile-angular-ui.core.js"></script>
+    <script src="js/libs/angular-route.js"></script>
+    <script src="js/libs/mobile-angular-ui.core.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/services/dataStorage.js"></script>
+<!--    <script src="js/services/dataStorage.js"></script>-->
+    <script src="js/services/mockDataStorage.js"></script>
     <script src="js/controllers/uploadController.js"></script>
-    <script src="js/upload.js"></script>
-    <script src="js/controllers/mainController.js"></script>
+<!--    <script src="js/upload.js"></script>-->
+<!--    <script src="js/controllers/mainController.js"></script>-->
     <script src="js/controllers/homeController.js"></script>
     <script src="js/controllers/projectsController.js"></script>
-    <script src="js/controllers/imagesController.js"></script>
+    <script src="js/controllers/projectDetailsController.js"></script>
+<!--    <script src="js/controllers/imagesController.js"></script>-->
 </head>
 
-<body ng-app="myModule">
+<body ng-app="mainGaffer">
     
     <div class="app">
         <!-- Navbars -->
@@ -31,7 +33,7 @@
             </div>
             <div class="btn-group pull-left">
                 <div class="btn btn-navbar">
-                    <a href="#home"><i class="fa fa-chevron-left pull-left"></i></a>
+                    <a href="#projects"><i class="fa fa-chevron-left pull-left"></i></a>
                 </div>
             </div>
         </div>
