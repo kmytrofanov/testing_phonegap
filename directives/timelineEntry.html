@@ -1,3 +1,8 @@
 Type: {{ entry.type }} <br>
 Author: {{ entry.author }} <br>
-Location: {{ entry.location }}
+Location: {{ entry.location }} <br>
+<a href="" ui-turn-on="photoModal"><img height=100 width=70 src='{{ entry.data }}'/></a>
+
+<div ui-content-for="modals">
+  <div ng-include="'directives/photoModal.html'"></div>
+</div>

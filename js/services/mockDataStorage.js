@@ -1,5 +1,14 @@
 app.factory('dataStorage', function() {
-    
+
+    var img = '/img/placeholder.jpg';
+//    var img = new Image();
+//    var file = new File('/img/placeholder.jpg');
+//    var reader = new FileReader();
+//    reader.onload = function(e) {
+//        img.src = reader.result;
+//    };
+//    reader.readAsDataURL(file);
+//    
     var creation_date = new Date(2016, 05, 12, 14, 55, 0, 0);
     var projects = [
         { 'name': 'Test Project', 'id': '0', 'date_created': creation_date, 'approved_price': 157, 'price_change': 10,
@@ -13,11 +22,11 @@ app.factory('dataStorage', function() {
             'revised_cost': 60, 'status': 'COMPLETED', 'id': 0}
         ],
         'timeline': [
-            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': ""},
-            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': ""},
-            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': ""},
-            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': ""},
-            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': ""}
+            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': img},
+            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': img},
+            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': img},
+            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': img},
+            { 'type': 'PHOTO', 'date': creation_date, 'author': 'Test Author', 'location': 'Test Location', 'data': img}
             ]
         }
     ];
